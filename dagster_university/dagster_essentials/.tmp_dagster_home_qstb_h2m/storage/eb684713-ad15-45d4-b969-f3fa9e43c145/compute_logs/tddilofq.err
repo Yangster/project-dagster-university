@@ -1,0 +1,28 @@
+[32m2025-05-05 16:02:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - eb684713-ad15-45d4-b969-f3fa9e43c145 - 93033 - LOGS_CAPTURED - Started capturing logs in process (pid: 93033).
+[32m2025-05-05 16:02:15 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - eb684713-ad15-45d4-b969-f3fa9e43c145 - 93033 - manhattan_stats - STEP_START - Started execution of step "manhattan_stats".
+[32m2025-05-05 16:02:15 +0000[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - eb684713-ad15-45d4-b969-f3fa9e43c145 - 93033 - manhattan_stats - STEP_FAILURE - Execution of step "manhattan_stats" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "manhattan_stats"::
+
+duckdb.duckdb.BinderException: Binder Error: Referenced column "geometry" not found in FROM clause!
+Candidate bindings: "geometr", "vendor_id", "payment_type", "passenger_count", "dropoff_datetime"
+
+LINE 9:         where borough = 'Manhattan' and geometry is not null
+                                                ^
+
+Stack Trace:
+  File "/usr/local/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 56, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 401, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 127, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/project-dagster-university/dagster_university/dagster_essentials/dagster_essentials/assets/metrics.py", line 29, in manhattan_stats
+    trips_by_zone = conn.execute(query).fetch_df()
+                    ^^^^^^^^^^^^^^^^^^^
+[0m
