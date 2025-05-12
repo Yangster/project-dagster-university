@@ -187,3 +187,6 @@ tmp*/
 .user.yml
 
 postgres_data/
+dagster_university/dagster_essentials/dagster_essentials/scratch1.py
+.gitignore
+dagster_university/dagster_essentials/dagster_essentials/assets/scratch1.py
