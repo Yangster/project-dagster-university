@@ -1,0 +1,5 @@
+[32m2025-05-13 17:58:29 +0000[0m - dagster - [34mDEBUG[0m - adhoc_request_job - 834440b9-fb40-43ad-ba0e-7175028e52de - 73898 - LOGS_CAPTURED - Started capturing logs in process (pid: 73898).
+[32m2025-05-13 17:58:29 +0000[0m - dagster - [34mDEBUG[0m - adhoc_request_job - 834440b9-fb40-43ad-ba0e-7175028e52de - 73898 - adhoc_request - STEP_START - Started execution of step "adhoc_request".
+[32m2025-05-13 17:58:30 +0000[0m - dagster - [34mDEBUG[0m - adhoc_request_job - 834440b9-fb40-43ad-ba0e-7175028e52de - 73898 - adhoc_request - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2025-05-13 17:58:30 +0000[0m - dagster - [34mDEBUG[0m - adhoc_request_job - 834440b9-fb40-43ad-ba0e-7175028e52de - 73898 - adhoc_request - ASSET_MATERIALIZATION - Materialized value adhoc_request.
+[32m2025-05-13 17:58:30 +0000[0m - dagster - [34mDEBUG[0m - adhoc_request_job - 834440b9-fb40-43ad-ba0e-7175028e52de - 73898 - adhoc_request - STEP_SUCCESS - Finished execution of step "adhoc_request" in 958ms.
